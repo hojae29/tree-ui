@@ -1,0 +1,55 @@
+ul {
+  list-style: none;
+  margin-left: 9px;
+  padding-left: 20px;
+}
+
+.tree .node {
+  cursor: pointer;
+  display: flex;
+  padding: 2px 0;
+}
+.tree ul {
+  position: relative;
+}
+.tree ul > .line {
+  position: absolute;
+  width: 10px;
+  left: 0;
+  top: 0;
+  border-radius: 0 0 0 8px;
+  border-left: 1px solid #E4E4E7;
+  border-bottom: 1px solid #E4E4E7;
+}
+.tree li:has(> ul) > ul {
+  display: none;
+}
+.tree li:has(> ul) > .node::before {
+  border: 1px solid transparent;
+  background-color: #494E55;
+  background-image: url("icon/add_icon.svg");
+  background-size: cover;
+}
+.tree li:has(> ul).expanded > ul {
+  display: block;
+}
+.tree li:has(> ul).expanded > .node::before {
+  border: 1px solid #D9D9D9;
+  background-color: #ffffff;
+  background-image: url("icon/remove_icon.svg");
+  background-size: cover;
+}
+.tree li:has(> ul) > .node {
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.tree li:has(> ul) > .node::before {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}/*# sourceMappingURL=index.css.map */
