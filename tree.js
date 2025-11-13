@@ -19,6 +19,26 @@ class Tree {
         });
     }
 
+    // 모두 열기
+    expandAll() {
+        this.tree.querySelectorAll('li').forEach(el => {
+            el.classList.remove('collapsed');
+            el.classList.add('expanded');
+
+            this.renderLine(el);
+        });
+    }
+
+    // 모두 닫기
+    collapseAll() {
+        this.tree.querySelectorAll('li').forEach(el => {
+            el.classList.remove('expanded');
+            el.classList.add('collapsed');
+
+            this.renderLine(el);
+        });
+    }
+
     toggle(li) {
         // 'expanded' 클래스가 있으면 제거하고, 없으면 추가
         const isExpanded = li.classList.toggle('expanded');
@@ -27,7 +47,7 @@ class Tree {
         li.classList.toggle('collapsed', !isExpanded);
 
         // 트리라인 렌더링
-        this.renderLine(li);
+        this.renderLine(li); 
     }
 
     getChilds(parentLi) {
